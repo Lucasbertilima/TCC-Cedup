@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+    <title>TurtleOrg</title>
+    <style>
+        body{
+        background-color: #4cf151;}
+        input[type=text], select, textarea{
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            resize: vertical;}
+            label {
+              padding: 12px 12px 12px 0;
+              display: inline-block;
+            }
+            a{
+                background-color: #ff0202;
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-radius= 4px;
+                cursor: pointer;
+                float: left;
+            }
+            input[type=submit] {
+                background-color: #289c2c;
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                float: right;}
+            .container {
+              border-radius: 5px;
+              background-color: #f2f2f2;
+              padding: 20px;
+            }
+            .row:after {
+              content: "";
+              display: table;
+              clear: both;
+            }
+            @media screen and (max-width: 600px) {
+              .col-25, .col-75, input[type=submit] {
+                width: 100%;
+                margin-top: 0;
+              }
+            }
+    </style>
+</head>
+<body>
+<form action="/TurtleOrg/Cadastro-destinatario", method="POST">
+    <div class="row">
+        <a href="/home">Voltar</a>
+    </div>
+    <div>
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id ="nome">
+    </div>
+    <div>
+        <label for="telefone">Telefone:</label>
+        <input type="text" name="telefone" id ="telefone">
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="text" name="email" id ="email">
+    </div>
+    <div>
+        <label for="cep">Cep:</label>
+        <input type="text" name="cep" id ="cep">
+    </div>
+    <div>
+        <label for="complemento">Complemento:</label>
+        <input type="text" name="complemento" id ="complemento" placeholder="Ex.Casa">
+    </div>
+    <div>
+        <label for="numero">Numero:</label>
+        <input type="text" name="numero" id ="numero">
+    </div>
+    <div class="row">
+        <input type="submit" value="Cadastrar">
+    </div>
+</form>
+</body>

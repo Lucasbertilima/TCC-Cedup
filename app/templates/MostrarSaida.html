@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TurtleOrg</title>
+    <style>
+        thead{color: black;}
+        tbody{color: black;}
+        table, th, td {
+                        border: 1px solid black;
+                        background-color: #53914b;}
+        body{
+            background-color: #056e13;
+        }
+        a{
+                background-color: #53914b;
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-radius= 4px;
+                cursor: pointer;
+                float: left;
+            }
+            a:hover{
+                background-color: #0b3a05;
+            }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <a href="/home">Voltar</a>
+    </div>
+    <div class="conteudo">
+        <table id='tabela-saida' style="width:100%" border="1">
+            <thead style="text-align: left">
+                <tr>
+                    <th>ID </th>
+                    <th>produto_id </th>
+                    <th>Nome Produto</th>
+                    <th>Quantidade</th>
+                    <th>Data</th>
+                    <th>Cliente_id</th>
+                    <th>Nome Cliente</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for s in lista_saida %}
+                <tr>
+                    <td>{{ s.id }}</td>
+                    <td>{{ s.produto_fk }}</td>
+                    <td>{{ s.nome_produto }}</td>
+                    <td>{{ s.quantidade }}</td>
+                    <td>{{ s.dataSaida}}</td>
+                    <td>{{ s.cliente_fk}}</td>
+                    <td>{{ s.nomecliente}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

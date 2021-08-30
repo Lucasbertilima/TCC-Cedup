@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>TurtleOrg</title>
+    <style>
+        body{
+        background-color: #4cf151;}
+        input[type=text], select, textarea{
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            resize: vertical;}
+            label {
+              padding: 12px 12px 12px 0;
+              display: inline-block;
+            }
+            a{
+                background-color: #ff0202;
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-radius= 4px;
+                cursor: pointer;
+                float: left;
+            }
+            input[type=submit] {
+                background-color: #289c2c;
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                float: right;}
+            .container {
+              border-radius: 5px;
+              background-color: #f2f2f2;
+              padding: 20px;
+            }
+            .row:after {
+              content: "";
+              display: table;
+              clear: both;
+            }
+            @media screen and (max-width: 600px) {
+              .col-25, .col-75, input[type=submit] {
+                width: 100%;
+                margin-top: 0;
+              }
+            }
+    </style>
+</head>
+<body>
+    <form action="/TurtleOrg/Saida-produtos", method="POST">
+        <div>
+            <label for="produto">Produto</label>
+            <select id="produto" name="produto">
+                <option value="">Selecione um Produto</option>
+                    {% for i in list_prod %}
+                <option value="{{ i.id }}">{{i.id}} - {{i.nome}}</option>>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label for="cliente">Cliente:</label>
+            <select id="cliente" name="cliente">
+                <option value="">Selecione um Cliente</option>
+                    {% for i in list_client %}
+                <option value="{{ i.id }}">{{i.id}} - {{i.nome}}</option>>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label for="quantidade">Quantidade:</label>
+            <input type="text" name="quantidade" id ="quantidade">
+        </div>
+    
+        <div class="row">
+            <input type="submit" value="Cadastrar"></input>
+        </div>
+    
+    </form>
+</body>
+</html>
